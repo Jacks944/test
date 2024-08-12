@@ -2,7 +2,6 @@ import React, { createContext, useState, useEffect } from 'react';
 import Web3Modal from 'web3modal';
 import { providers, ethers } from 'ethers';
 import { SMARTCONTRACT_ADDRESS, SMARTCONTRACT_ABI, SMARTCONTRACT_ADDRESS_ERC20, SMARTCONTRACT_ABI_ERC20, CHAIN_ID, SITE_ERROR } from '../../config';
-import { errorAlert, errorAlertCenter } from '../components/toastGroup';
 import MetamaskRequired from '../views/errors/MetamaskRequired';
 import BinanceChainRequired from '../views/errors/BinanceChainRequired';
 import switchToBinanceNetwork from '../utils/binanceSwitch';
@@ -132,7 +131,6 @@ export const ConnectionProvider = ({ children }) => {
     fetchData();
   }, []);
 
-  if (!metamaskFound) return <MetamaskRequired />;
 
   if (homeloading) {
     return (
@@ -146,6 +144,7 @@ export const ConnectionProvider = ({ children }) => {
       </Box>
     );
   }
+  if (!metamaskFound) return <MetamaskRequired />;
 
   if (!correctNetwork) {
     return <BinanceChainRequired switchToBinanceNetwork={switchToBinanceNetwork} />;
