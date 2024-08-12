@@ -1,7 +1,9 @@
+import Link from 'next/link'
 import { ReactSVG } from 'react-svg'
 export default function GuideBanner() {
   return (
     <div className="guide-hero">
+      <Link href="/nfts-list" passHref>
       <div className="guide-item">
         <p>Select your NFTs</p>
         {/* eslint-disable-next-line */}
@@ -15,6 +17,8 @@ export default function GuideBanner() {
           </svg>
         </div>
       </div>
+      </Link>
+      <Link href="/nfts-list" passHref>
       <div className="guide-item">
         <p>Decide how much you want to spend to earn</p>
         {/* eslint-disable-next-line */}
@@ -28,6 +32,8 @@ export default function GuideBanner() {
           </svg>
         </div>
       </div>
+      </Link>
+      <Link href="/nfts-list" passHref>
       <div className="guide-item">
         <p>Come back in 12 months to Claim</p>
         {/* eslint-disable-next-line */}
@@ -36,6 +42,7 @@ export default function GuideBanner() {
           alt=''
         />
       </div>
+      </Link>
     </div>
   )
 }

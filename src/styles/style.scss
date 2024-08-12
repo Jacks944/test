@@ -1066,6 +1066,7 @@ p.signer-balance {
   margin-top: 30px;
 }
 .guide-item {
+  cursor: pointer;
   width: calc(33.3% - 10px);
   margin-right: 5px;
   margin-left: 5px;
@@ -1081,11 +1082,24 @@ p.signer-balance {
     font-weight: 700;
     font-size: 20px;
   }
+  &:hover {
+    animation: pulse 1.5s infinite;
+    background-color: #1f891d;
+    // calculate background color based on index
+  }
   &:first-child {
     background-color: #384eb4;
   }
+  &:first-child:hover {
+    // pulse background color
+    background-color: #4661da;
+  }
   &:last-child {
     background-color: #0b3964;
+  }
+  &:last-child:hover {
+    // pulse background color
+    background-color: #12619e;
   }
   img {
     width: 100%;
@@ -1209,4 +1223,27 @@ p.signer-balance {
     top: 20px;
     left: 20px;
   }
+}
+
+
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: rgb(218, 3, 218)!important;
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px!important;
+}
+
+#nprogress .peg {
+  display: none;
+}
+
+#nprogress .spinner {
+  display: none;
 }

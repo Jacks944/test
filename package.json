@@ -19,6 +19,7 @@
     "lodash": "^4.17.21",
     "moralis": "^0.0.184",
     "next": "12.0.7",
+    "nprogress": "^0.2.0",
     "postcss-preset-env": "^7.1.0",
     "react": "17.0.2",
     "react-countdown": "^2.3.2",
