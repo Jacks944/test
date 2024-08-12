@@ -1066,6 +1066,7 @@ p.signer-balance {
   margin-top: 30px;
 }
 .guide-item {
+  cursor: pointer;
   width: calc(33.3% - 10px);
   margin-right: 5px;
   margin-left: 5px;
@@ -1081,11 +1082,24 @@ p.signer-balance {
     font-weight: 700;
     font-size: 20px;
   }
+  &:hover {
+    animation: pulse 1.5s infinite;
+    background-color: #1f891d;
+    // calculate background color based on index
+  }
   &:first-child {
     background-color: #384eb4;
   }
+  &:first-child:hover {
+    // pulse background color
+    background-color: #4661da;
+  }
   &:last-child {
     background-color: #0b3964;
+  }
+  &:last-child:hover {
+    // pulse background color
+    background-color: #12619e;
   }
   img {
     width: 100%;
