@@ -54,12 +54,12 @@ export default function Home({ headerAlert, closeAlert }) {
       setConnected(true)
       setSignerAddress(address)
 
-      contract = new ethers.Contract(
+      const contract = new ethers.Contract(
         SMARTCONTRACT_ADDRESS,
         SMARTCONTRACT_ABI,
         signer
       )
-      contract_20 = new ethers.Contract(
+      const contract_20 = new ethers.Contract(
         SMARTCONTRACT_ADDRESS_ERC20,
         SMARTCONTRACT_ABI_ERC20,
         signer
@@ -104,7 +104,7 @@ export default function Home({ headerAlert, closeAlert }) {
     const connection = await web3Modal.connect()
     const provider = new ethers.providers.Web3Provider(connection)
     const signer = provider.getSigner()
-    contract = new ethers.Contract(
+    const contract = new ethers.Contract(
       SMARTCONTRACT_ADDRESS,
       SMARTCONTRACT_ABI,
       signer
