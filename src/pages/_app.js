@@ -5,19 +5,21 @@ import Loading from '../components/Loading'
 import Moralis from 'moralis'
 import { APP_ID, SERVER_URL, SITE_ERROR } from '../../config'
 import {  errorAlertCenter,errors } from '../components/toastGroup'
+import LoadingBar from '../components/LoadingBar'
 
 function MyApp({ Component, pageProps }) {
   const [pageLoading, setPageLoading] = useState(false)
   const [hAlert, setHAlert] = useState(true)
 
   try{
-    // Moralis.start({ serverUrl: SERVER_URL, appId: APP_ID })
+    // Moralis.start({ serverUrl: SERVER_URL, appId: APP_ID }) TODO: Uncomment this line to enable Moralis SDK
   }
   catch(e) {
     errorAlertCenter(SITE_ERROR[1]);
   }
   return (
     <>
+      <LoadingBar />
       <Component {...pageProps}
         startLoading={() => setPageLoading(true)}
         closeLoading={() => setPageLoading(false)}
